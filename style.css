@@ -1,35 +1,96 @@
+@font-face {
+    font-family: RobotoRegular;
+    src: url(./fonts/Roboto-Regular.woff);
+    font-weight: normal;
+}
+
 * {
     box-sizing: border-box;
+    font-family: RobotoRegular;
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
 }
 
 .container {
     display: grid;
-    grid-template-columns: minmax(1fr, 100px) minmax(4fr, 400px) minmax(1.2fr, 120px);
+    grid-template-columns: 300px minmax(1000px, 4fr) minmax(400px, 1.2fr);
     grid-template-rows: 0.5fr 0.5fr 6fr;
 }
 
 .dashboard {
+    color: white;
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-color: skyblue;
+    grid-row: 1 / 4;
+    background-color: rgb(40, 147, 214);
+    padding: 20px;
+    display: grid;
+    gap: 80px;
+}
+
+.icon-header {
+    width: 48px;
+    height: 48px;
+    justify-self: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    justify-self: center;
+}
+
+.icon-filter {
+    filter: invert(100%);
+}
+
+.icon-text-header, .icon-text {
+    height: 100%;
+    width: 100%;
+    font-size: 3rem;
+    margin: auto 0;
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.icon-text {
+    font-size: 2rem;
+}
+
+.dashboard .header, .dashboard .middle-menu, .dashboard .bottom-menu {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 12px;
+    row-gap: 18px;
 }
 
 .searchbar {
-    grid-column: 2 / -1;
+    grid-column: 2 / 4;
     grid-row: 1 / 2;
 }
 
 .profile {
-    grid-column: 2 / -1;
+    grid-column: 2 / 4;
     grid-row: 2 / 3;
 }
 
 .projects {
-    grid-column: 2 / -1;
+    grid-column: 2 / 3;
     grid-row: 3 / 4;
+    background-color: lightgray;
 }
 
 .rightsidebar {
-    grid-column: 3 / -1;
+    grid-column: 3 / 4;
     grid-row: 3 / 4;
+    background-color: lightgray;
 }
