@@ -12,6 +12,7 @@
     font-size: 62.5%;
     font-family: RobotoRegular;
     --bg-color: rgb(224, 227, 235);
+    --blue: rgb(40, 147, 214);
 }
 
 a {
@@ -32,7 +33,7 @@ a:visited {
     color: white;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    background-color: rgb(40, 147, 214);
+    background-color: var(--blue);
     padding: 20px;
     display: grid;
     gap: 80px;
@@ -81,8 +82,10 @@ a:visited {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
     display: grid;
-    grid-template-columns: minmax(400px, 2fr) minmax(0px, 1.5fr) minmax(200px, 1fr);
+    grid-template-columns: minmax(400px, 2fr) minmax(0px, 1.5fr) minmax(250px, 1fr);
     align-items: center;
+    padding: 10px 80px 10px 0px;
+    column-gap: 5px;
 }
 
 .form-search-bar {
@@ -123,7 +126,7 @@ a:visited {
 }
 
 .profile-photo {
-    border-radius: 25px;
+    border-radius: 50px;
     justify-self: center;
 }
 
@@ -136,6 +139,63 @@ a:visited {
 .profile {
     grid-column: 2 / 4;
     grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: minmax(350px, 1fr) minmax(0px, 1.5fr) minmax(300px, 1fr);
+    padding: 10px 60px 20px 40px;
+    z-index: 1;
+    box-shadow: 0px 3px 3px rgb(199, 198, 198);
+    clip-path: inset(0px 0px -15px 0px);
+}
+
+.profile-left {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: minmax(64px, 1fr) minmax(300px 8fr);
+    grid-template-rows: 32px 32px;
+    row-gap: 5px;
+}
+
+.profile-left .profile-photo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.profile-left p {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    align-self: end;
+    margin: 0;
+}
+
+.profile-left a {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    align-self: start;
+}
+
+.profile-right {
+    grid-column: 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.profile-right button {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 90px;
+    height: 35px;
+    font-weight: bold;
+    align-self: center;
+    justify-self: end;
 }
 
 .projects {
